@@ -1,0 +1,23 @@
+# Movie Rental
+The `returnCustomerRentalStatement` function in `refactoring-task.ts` returns a statement of a customer's movie rental history. The code is valid and correct but has a number of code smells, violates some clean coding practices and is not easy to write unit tests for.
+
+## Task:
+Fork and refactor the code however you see fit.
+* Add unit test coverage (example: should return the correct frequent renter points)
+* Think about the solid principals, which of these principals is the `returnCustomerRentalStatement` function violating.
+* The business requires that the `returnCustomerRentalStatement` function always returns the expected output as shown in the unit test `returns the correct rental record`. If that unit test fails the business will be angry!
+    * In the future the business would like to add a new `movie code`.
+* When completed, raise a PR and explain to the group your reason for refactoring certain aspects of the code. 
+
+**HOW TO RUN TESTS**:
+```     
+    tsc tests/movie-rental.test.ts
+    jest tests/movie-rental.test.js
+```
+
+## Advanced:
+* Customers and Movies are currently stored in an array. 
+    * How else may we want to retrieve this data?
+
+
+
