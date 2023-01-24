@@ -1,12 +1,17 @@
-export function returnCustomerRentalStatement(customer, movies) {
+import { Customer, Movie, RentalData } from "./types";
+
+export function returnCustomerRentalStatement(
+  customer: Customer,
+  movies: Array<RentalData>
+) {
   let totalAmount = 0;
   let frequentRenterPoints = 0;
   let result = `Rental Record for ${customer.name} `;
   for (let r of customer.rentals) {
-    let movie = movies[r.movieID];
+    let movie: Movie = movies[r.movieID];
     let thisAmount = 0;
 
-    // determine amount for each movie   we
+    // determine amount for each movie
     switch (movie.code) {
       case "regular":
         thisAmount = 2;
@@ -25,7 +30,7 @@ export function returnCustomerRentalStatement(customer, movies) {
         break;
     }
 
-    //add frequent renter points
+    // add frequent renter points
     frequentRenterPoints++;
     // add bonus for a two day new release rental
     if (movie.code === "new" && r.days > 2) frequentRenterPoints++;
@@ -40,3 +45,5 @@ export function returnCustomerRentalStatement(customer, movies) {
 
   return result;
 }
+
+returnCustomerRentalStatement("Martin");
